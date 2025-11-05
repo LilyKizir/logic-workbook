@@ -1,0 +1,20 @@
+// 1. First, import the files that define all of Bootstrap's variables.
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables"; // This file defines $pink, $purple, etc.
+
+// 2. This is the magic step.
+// We merge Bootstrap's default $colors map with the other colors
+// you want to "unlock," like $pink, $purple, and $orange.
+$all-colors: map-merge($colors, (
+  "pink": $pink,
+  "purple": $purple,
+  "orange": $orange,
+  "teal": $teal,
+  "indigo": $indigo
+  // Add any other built-in colors you want here
+));
+
+// 3. Finally, import the full Bootstrap framework.
+// It will now use your expanded $all-colors map to generate all 
+// utility classes, including .bg-pink, .text-pink, etc.
+@import "bootstrap/scss/bootstrap";
