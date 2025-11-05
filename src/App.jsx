@@ -1,17 +1,28 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-
+import Root from './routes/root'
+import Home from './routes/Home'
+import Exercise01 from './routes/lesson-01/Exercise01'
 function App() {
 
   return (
     <>
-      <Header/>
-      <main className='main-content'>
-        {/* <Routes>
-          <Route path='/' element={<Home />} />
-        </Routes> */}
-      </main>
+        <Routes>
+          <Route path='/logic-workbook/' element={<Root/>}>
+            <Route index element={<Home />} />
+            <Route path='/logic-workbook/chapter-01/exercise-01' element={<Exercise01/>}/>
+            {/* <Route path='/chapter-02' element={}/>
+            <Route path='/chapter-03' element={}/>
+            <Route path='/chapter-04' element={}/>
+            <Route path='/chapter-05' element={}/>
+            <Route path='/chapter-06' element={}/>
+            <Route path='/chapter-07' element={}/>
+            <Route path='/chapter-08' element={}/>
+            <Route path='/chapter-09' element={}/>
+            <Route path='/chapter-10' element={}/>
+            <Route path='/chapter-11' element={}/>
+            <Route path='/chapter-12' element={}/> */}
+          </Route>
+        </Routes>
     </>
   )
 }
