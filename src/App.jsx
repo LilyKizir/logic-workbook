@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
 import Root from './routes/root'
 import Home from './routes/Home'
-import Exercise01 from './routes/lesson-01/Exercise01'
+import Exercise01 from './routes/chapter-01/Exercise01'
 function App() {
 
   return (
     <>
         <Routes>
-          <Route path='/logic-workbook/' element={<Root/>}>
+          <Route path='/' element={<Root/>}>
             <Route index element={<Home />} />
-            <Route path='/logic-workbook/chapter-01/exercise-01' element={<Exercise01/>}/>
+            <Route path='chapter-01/exercise-01' element={<Exercise01/>}/>
             {/* <Route path='/chapter-02' element={}/>
             <Route path='/chapter-03' element={}/>
             <Route path='/chapter-04' element={}/>
