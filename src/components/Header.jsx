@@ -1,4 +1,4 @@
-import TabsExample from "./Tabs.Jsx";
+import TabsExample from "./MockupSwitcher.jsx";
 const Header = () => {
     return (
         <>

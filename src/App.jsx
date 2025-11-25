@@ -6,7 +6,7 @@ import AssignmentDashboard from './components/LeftDashboard';
 import Proofs from './components/Proofs';
 import Grades from './components/RightDashboard';
 import CourseManagementDashboard from './components/CourseManagementDashboard';
-import TabsExample from './components/Tabs.Jsx';
+import MockupSwitcher from './components/MockupSwitcher.jsx';
 
 
 
@@ -53,10 +53,11 @@ function App() {
 
   return (
     <>
-      <TabsExample
+      <MockupSwitcher
         activeView={activeView}
         setActiveView={setActiveView}
       />
+
       <div class="col-lg mx-auto p-4 py-md-5">
         <Header />
 

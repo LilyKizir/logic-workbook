@@ -2,13 +2,13 @@ import Nav from 'react-bootstrap/Nav';
 import React, { useState } from 'react';
 
 
-function TabsExample({ activeView, setActiveView }) {
+function MockupSwitcher({ activeView, setActiveView }) {
 
   // 2. Handler function to update the state when a nav link is clicked.
   const handleSelect = (selectedKey) => {
     setActiveView(selectedKey);
   };
-  
+
   return (
     <Nav
       variant="tabs"
@@ -35,4 +35,4 @@ function TabsExample({ activeView, setActiveView }) {
   );
 }
 
-export default TabsExample;
+export default MockupSwitcher;
