@@ -5,15 +5,58 @@ import Header from './components/Header'
 import AssignmentDashboard from './components/LeftDashboard';
 import Proofs from './components/Proofs';
 import Grades from './components/RightDashboard';
-import TabsExample from './components/Tabs.Jsx';
 import CourseManagementDashboard from './components/CourseManagementDashboard';
+import TabsExample from './components/Tabs.Jsx';
 
 
 
 function App() {
 
+  // 1. Initialize state to track the active view. We start with 'grades'.
+  const [activeView, setActiveView] = useState('auth');
+
+  const renderContent = () => {
+    switch (activeView) {
+      case 'auth':
+        return (
+          <Authentication />
+        );
+
+      case 'students':
+        return (
+          <>
+            <div className='row'>
+              <div className='col-6'>
+                <AssignmentDashboard />
+              </div>
+              <div className='col-6'>
+                <Grades />
+              </div>
+            </div>
+          </>
+        );
+
+      case 'instructor':
+        return (
+          <CourseManagementDashboard />
+        );
+
+      case 'proof':
+        return (
+          <Proofs />
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
+      <TabsExample
+        activeView={activeView}
+        setActiveView={setActiveView}
+      />
       <div class="col-lg mx-auto p-4 py-md-5">
         <Header />
 
@@ -110,23 +153,7 @@ function App() {
           </div>
         </main> */}
 
-        {/* <Authentication /> */}
-
-            {/* <TabsExample/> */}
-
-        {/* <div className='row'>
-          <div className='col-6'>
-            <AssignmentDashboard />
-          </div>
-          <div className='col-6'>
-
-            <Grades />
-          </div>
-        </div> */}
-
-        {/* <CourseManagementDashboard/> */}
-
-        <Proofs/>
+        {renderContent()}
 
         <footer class="pt-5 my-5 text-body-secondary border-top">
           Created by the Hunter College Philosophy Department Developer team · © 2025

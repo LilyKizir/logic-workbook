@@ -1,3 +1,4 @@
+import TabsExample from "./Tabs.Jsx";
 const Header = () => {
     return (
         <>
@@ -5,6 +6,7 @@ const Header = () => {
                 <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
                     <span class="fs-4">Symbolic Logic Workbook</span>
                 </a>
+                
                 {/* IF SIGNED IN THEN LOG OUT BTN */}
                 <div class="col-md-3 text-end">
                     Welcome User!
