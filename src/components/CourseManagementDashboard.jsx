@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
-import Accordion from 'react-bootstrap/Accordion';
-import Table from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -33,8 +30,43 @@ const CourseManagementDashboard = () => {
 
             case 'assignments':
                 return (
-                    // Report a Bug Content
-                    <p>Use this form to **Report a bug**.</p>
+                    <>
+                        <Row>
+                            <Col xs={3}>
+                                <ul class="nav list-group flex-column mb-auto">
+                                    <li class="nav-item list-group-item">
+                                        <a href="#" class="nav-link active" aria-current="page">
+                                            Published Assignments
+                                        </a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a href="#" class="nav-link ">
+                                            Assign Textbook Problems
+                                        </a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a href="#" class="nav-link ">
+                                            Assign Uploaded Documents
+                                        </a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a href="#" class="nav-link ">
+                                            Manage Uploaded Documents
+                                        </a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a href="#" class="nav-link ">
+                                            Extra Option
+                                        </a>
+                                    </li>
+                                </ul>
+                            </Col>
+                            <Col>
+                                {/* Render the appropriate content based on the state */}
+                                <p>Use this form to **Report a bug**.</p>
+                            </Col>
+                        </Row>
+                    </>
                 );
 
 
@@ -77,41 +109,8 @@ const CourseManagementDashboard = () => {
             </Card.Header>
 
             <Card.Body>
-                <Row>
-                    <Col xs={2}>
-                        <ul class="nav flex-column mb-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link active" aria-current="page">
-                                    Published Assignments
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link ">
-                                    Assigment manager
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link ">
-                                    Upload Documents
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link ">
-                                    Products
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link ">
-                                    Customers
-                                </a>
-                            </li>
-                        </ul>
-                    </Col>
-                    <Col>
-                        {/* Render the appropriate content based on the state */}
-                        {renderContent()}
-                    </Col>
-                </Row>
+                {/* Render the appropriate content based on the state */}
+                {renderContent()}
 
             </Card.Body>
         </Card>
