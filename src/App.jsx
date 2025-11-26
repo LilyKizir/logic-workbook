@@ -5,7 +5,7 @@ import Header from './components/Header'
 import AssignmentDashboard from './components/LeftDashboard';
 import Proofs from './components/Proofs';
 import Grades from './components/RightDashboard';
-import TabsExample from './components/Tabs.Jsx';
+import TabsExample from './components/Tabs.jsx';
 import CourseManagementDashboard from './components/CourseManagementDashboard';
 
 
