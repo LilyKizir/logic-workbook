@@ -1,34 +1,37 @@
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ListGroup from 'react-bootstrap/ListGroup';
+import QuestionList from './QuestionList';
+
 const Proofs = () => {
     return (
         <>
-            <div class="card">
-                <div class="card-header">
-                    <h5 className="card-title">Proof Set 1</h5>
-                </div>
-                <div class="card-body">
-                    <div class='row'>
-                        <div class='col-2'>
-                            <ul class="list-group">
-                                <li class="list-group-item active" aria-current="true">Question 1</li>
-                                <li class="list-group-item">Question 2</li>
-                                <li class="list-group-item">Question 3</li>
-                                <li class="list-group-item">Question 4</li>
-                                <li class="list-group-item">Question 5</li>
-                            </ul>
-                        </div>
-                        <div class='col'>
-                            <div class="card">
-                                <div class="card-header">
-                                    <p>Some instructions</p>
-                                </div>
-                                <div class="card-body">
-                                    <p>Some Content</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Card>
+                <Card.Header>
+                    <Card.Title as="h5">Proof Set 1</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                    <Row>
+                        {/* 'col-2' becomes xs={2} (or md={2} for responsive behavior) */}
+                        <QuestionList/>
+
+                        {/* 'col' becomes standard Col which takes up remaining space */}
+                        <Col>
+                            <Card>
+                                <Card.Header>
+                                    <p className="mb-0">Some instructions</p>
+                                </Card.Header>
+                                <Card.Body>
+                                    <Card.Text>
+                                        Some Content
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Card.Body>
+            </Card>
         </>
     );
 };

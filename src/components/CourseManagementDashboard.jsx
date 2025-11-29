@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import QuestionList from './QuestionList';
+
 
 const CourseManagementDashboard = () => {
     // 1. Initialize state to track the active view. We start with 'grades'.
@@ -32,35 +34,8 @@ const CourseManagementDashboard = () => {
                 return (
                     <>
                         <Row>
-                            <Col xs={3}>
-                                <ul class="nav list-group flex-column mb-auto">
-                                    <li class="nav-item list-group-item">
-                                        <a href="#" class="nav-link active" aria-current="page">
-                                            Published Assignments
-                                        </a>
-                                    </li>
-                                    <li class="nav-item list-group-item">
-                                        <a href="#" class="nav-link ">
-                                            Assign Textbook Problems
-                                        </a>
-                                    </li>
-                                    <li class="nav-item list-group-item">
-                                        <a href="#" class="nav-link ">
-                                            Assign Uploaded Documents
-                                        </a>
-                                    </li>
-                                    <li class="nav-item list-group-item">
-                                        <a href="#" class="nav-link ">
-                                            Manage Uploaded Documents
-                                        </a>
-                                    </li>
-                                    <li class="nav-item list-group-item">
-                                        <a href="#" class="nav-link ">
-                                            Extra Option
-                                        </a>
-                                    </li>
-                                </ul>
-                            </Col>
+                            <QuestionList/>
+
                             <Col>
                                 {/* Render the appropriate content based on the state */}
                                 <p>Use this form to **Report a bug**.</p>
