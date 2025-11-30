@@ -9,7 +9,6 @@ import CourseManagementDashboard from './components/CourseManagementDashboard';
 import MockupSwitcher from './components/MockupSwitcher.jsx';
 
 
-
 function App() {
 
   // 1. Initialize state to track the active view. We start with 'grades'.
