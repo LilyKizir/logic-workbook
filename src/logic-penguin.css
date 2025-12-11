@@ -1,0 +1,68 @@
+/* Minimal LogicPenguin Styling */
+.logicpenguin {
+  --lp-line-color: #333;
+  --lp-bg-color: #fff;
+}
+
+/* The vertical Fitch Lines */
+sub-derivation {
+  display: block;
+  border-left: 2px solid var(--lp-line-color);
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* The horizontal bar under premises */
+.premiseroot > .derivationline.lastpremise {
+  border-bottom: 2px solid var(--lp-line-color);
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+/* Flexbox layout for rows */
+.derivationline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.derivationlinenumber {
+  width: 30px;
+  text-align: right;
+  margin-right: 10px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.formulainput, .justification {
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formulainput {
+  min-width: 200px;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.1em;
+}
+
+.justification {
+  min-width: 100px;
+}
+
+/* Button styling */
+.buttondiv button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.buttondiv button:hover {
+  background-color: #0056b3;
+}

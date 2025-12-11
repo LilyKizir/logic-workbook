@@ -2,7 +2,8 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import QuestionList from './QuestionList';
-
+import ArgumentBox from './ArgumentBox';
+ArgumentBox
 const Proofs = () => {
     return (
         <>
@@ -23,6 +24,7 @@ const Proofs = () => {
                                 </Card.Header>
                                 <Card.Body>
                                     <Card.Text>
+                                        <ArgumentBox/>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
