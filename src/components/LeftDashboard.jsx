@@ -15,56 +15,58 @@ const LeftDashboard = () => {
 
     // 3. Function to render the correct content based on the active state.
     const renderContent = () => {
+        const chapters = [
+            {
+                id: "0",
+                title: "Chapter 1",
+                assignments: [
+                    { name: "Problem Set 1", due: "2025-05-26 23:59 EDT" },
+                    { name: "Problem Set 2", due: "2025-12-12 12:00 EST" },
+                ]
+            },
+            { id: "1", title: "Chapter 2", assignments: [] },
+            { id: "2", title: "Chapter 3", assignments: [] },
+        ];
         switch (activeView) {
             case 'assignments':
                 return (
                     // Assignments Content
-                    
-                    <Accordion defaultActiveKey="0">
 
-                        {/* Chapter 1 Accordion Item */}
-                        <Accordion.Item eventKey="0">
-                            <Accordion.Header>Chapter 1</Accordion.Header>
-                            <Accordion.Body>
-                                <Table striped className="assignment">
-                                    <thead>
-                                        <tr>
-                                            <th>Assignment</th>
-                                            <th>Due Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Problem Set 1</td>
-                                            <td>2025-05-26 23:59 EDT</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Problem Set 2</td>
-                                            <td>2025-12-12 12:00 EST</td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                            </Accordion.Body>
-                        </Accordion.Item>
-
-                        {/* Chapter 2 Accordion Item (Example of a second item) */}
-                        <Accordion.Item eventKey="1">
-                            <Accordion.Header>Chapter 2</Accordion.Header>
-                            <Accordion.Body>
-                                {/* ... Content for Chapter 2 ... */}
-                                This is the content for Chapter 2.
-                            </Accordion.Body>
-                        </Accordion.Item>
-
-                        {/* Chapter 3 Accordion Item (Example of a third item) */}
-                        <Accordion.Item eventKey="2">
-                            <Accordion.Header>Chapter 3</Accordion.Header>
-                            <Accordion.Body>
-                                {/* ... Content for Chapter 3 ... */}
-                                This is the content for Chapter 3.
-                            </Accordion.Body>
-                        </Accordion.Item>
-
+                    <Accordion defaultActiveKey="0" flush className="shadow-sm border rounded">
+                        {chapters.map((chapter) => (
+                            <Accordion.Item eventKey={chapter.id} key={chapter.id}>
+                                <Accordion.Header className="fw-bold">{chapter.title}</Accordion.Header>
+                                <Accordion.Body
+                                // className="p-0"
+                                > {/* p-0 makes the table flush with edges */}
+                                    {chapter.assignments.length > 0 ? (
+                                        <Table
+                                            // striped
+                                            hover
+                                            responsive
+                                            className="mb-0"
+                                        >
+                                            <thead className="table-light">
+                                                <tr>
+                                                    <th>Assignment</th>
+                                                    <th>Due Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {chapter.assignments.map((asgn, index) => (
+                                                    <tr key={index}>
+                                                        <td>{asgn.name}</td>
+                                                        <td>{asgn.due}</td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </Table>
+                                    ) : (
+                                        <div className="p-3 text-muted">No assignments listed for this chapter.</div>
+                                    )}
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        ))}
                     </Accordion>
                 );
 

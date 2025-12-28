@@ -37,7 +37,17 @@ function App() {
 
       case 'instructor':
         return (
-          <CourseManagementDashboard />
+          
+          <>
+            <div className='row'>
+              <div className='col-6'>
+                <CourseManagementDashboard />
+              </div>
+              <div className='col-6'>
+                <Grades />
+              </div>
+            </div>
+          </>
         );
 
       case 'proof':
